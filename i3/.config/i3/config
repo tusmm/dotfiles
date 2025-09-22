@@ -41,6 +41,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +15%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 15%-
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -121,8 +125,8 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
+set $ws1 "1: Terminal"
+set $ws2 "2: Firefox"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -193,5 +197,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+	status_command i3status -c /home/$USER/.config/i3status/i3status.conf
 }
+
+# Allocate applications to workspaces
+# for_window [class="firefox"] move to workspace $ws2
