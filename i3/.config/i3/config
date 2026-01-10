@@ -56,6 +56,9 @@ tiling_drag modifier titlebar
 bindsym $mod+Ctrl+t exec alacritty
 # edit to use Ctrl + t for alacritty over $mod + return
 
+# Start Joplin
+bindsym $mod+Shift+p exec joplin-desktop
+
 # kill focused window
 bindsym $mod+Ctrl+q kill
 
@@ -125,8 +128,8 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Terminal"
-set $ws2 "2: Firefox"
+set $ws1 "1" 
+set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
