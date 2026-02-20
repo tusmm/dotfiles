@@ -2,6 +2,6 @@ require "user.options"
 require "user.keymaps"
 require "user.plugins"
 require "user.colorscheme"
-
--- vim.cmd "colorscheme github_dark_default"
+require "user.cmp"
+require "user.lsp"
 
